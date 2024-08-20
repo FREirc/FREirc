@@ -1,0 +1,45 @@
+html {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+body {
+  background-color: #212529;
+  font-family: 'Quicksand';
+}
+a {
+  color: #B2B9C6;
+}
+h1 {
+  color: #C6CDDA;
+  font-size: 28px;
+}
+h2 {
+  color: #C6CDDA;
+  font-size: 16px;
+}
+h3 {
+  color: #C6CDDA;
+  font-size: 14px;
+}
+h4 {
+  color: #C6CDDA;
+  font-size: 12px;
+}
+h1:after
+{
+    content:' ';
+    display:block;
+    border:1px solid #C6CDDA;
+}
+p, li {
+  line-height: 1.5;
+}
+li
+{
+  color: #C6CDDA;
+  font-weight: 400;
+}
+p {
+  color: #C6CDDA;
+  font-weight: 400;
+}
