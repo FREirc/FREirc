@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful World</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('c.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'CustomFont', sans-serif;
+        }
+
+        /* 第一页样式 */
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            filter: blur(10px);
+            animation: fadeIn 1s forwards;
+            color: white;
+        }
+
+        /* 第二页样式 */
+        .second-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: rgb(96, 185, 147);
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: rgb(101, 91, 91);
+            transition: color 1s;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: rgb(137, 104, 104);
+            transition: color 1s;
+        }
+
+        button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #00a1d6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0090c0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                filter: blur(10px);
+                background-color: #000;
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+                background-color: transparent;
+            }
+        }
+
+        /* 页面过渡 */
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        .page, .second-page {
+            scroll-snap-align: start;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- 第一页 -->
+        <div class="page" style="background-image: url('1.png');">
+            <h1>STARRY DREAM Studios</h1>
+            <h2>星空梦工作室-正在制作Undertale AU 流彩浮世</h2>
+            <button onclick="window.location.href='https://www.bilibili.com'">访问Bilibili</button>
+        </div>
+
+        <!-- 第二页 -->
+        <div class="second-page" style="background-image: url('2.jpg');">
+            <div>欢迎加入开发组
+                QQ群：967386431
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载后，保持字体为白色
+        window.onload = function() {
+            document.querySelector('.page h1').style.color = 'white';
+            document.querySelector('.page h2').style.color = 'black';
+        };
+    </script>
+</body>
+</html>
