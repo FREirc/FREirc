@@ -28,6 +28,9 @@ if exist .minecraft\versions\create\create.jar (
 echo 检测更新状态：
 
 cd /d %~dp0
+
+del .minecraft\mods\createrailwaysnavigator-forge-1.20.1-0.5.5.jar
+
 if exist .minecraft\mods\25F2-RailwayNav0.7.2.jar (
     
     echo 您已更新
@@ -45,8 +48,10 @@ echo 您未更新
     
 echo 正在下载：
 timeout 2
+
 del 25F2-RailwayNav0.7.2.jar
-del createrailwaysnavigator-forge-1.20.1-0.5.5.jar
+
+del .minecraft\mods\createrailwaysnavigator-forge-1.20.1-0.5.5.jar
     
 wget https://yun.urldwz.com/f/r44cD/25F2-RailwayNav0.7.2.jar
     
