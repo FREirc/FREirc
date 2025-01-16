@@ -47,7 +47,7 @@ echo 正在下载：
 timeout 2
 del 25F2-RailwayNav0.7.2.jar
     
-wget https://yun.urldwz.com/f/r44cD/25F2-RailwayNav0.7.2.jar
+curl https://yun.urldwz.com/f/r44cD/25F2-RailwayNav0.7.2.jar -O 25F2-RailwayNav0.7.2.jar
     
 if %errorlevel%==0 (
     color 2
