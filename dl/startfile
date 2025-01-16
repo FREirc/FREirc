@@ -1,0 +1,96 @@
+@echo off
+
+chcp 65001
+
+echo 欢迎游玩
+
+echo 本次更新：铁路导航系统
+
+echo 正在检查本地状态：
+
+cd /d %~dp0
+if exist .minecraft\versions\create\create.jar (
+    
+    echo 游戏结构：正常
+    
+    goto start
+) else (
+    
+    echo 游戏结构：异常
+    
+    echo 请联系服务器运营者FRE_irc
+    
+    pause
+    exit
+)
+:start
+
+echo 检测更新状态：
+
+cd /d %~dp0
+if exist .minecraft\mods\25F2-RailwayNav0.7.2.jar (
+    
+    echo 您已更新
+    timeout 3
+    
+    echo 进入游戏
+    
+    start HMCL.exe
+    exit
+) else (
+    goto download
+)
+:download
+echo 您未更新
+    
+echo 正在下载：
+timeout 2
+del 25F2-RailwayNav0.7.2.jar
+    
+wget https://yun.urldwz.com/f/r44cD/25F2-RailwayNav0.7.2.jar
+    
+if %errorlevel%==0 (
+    color 2
+        
+    echo 下载成功
+        
+    echo 正在安装：
+        
+    move 25F2-RailwayNav0.7.2.jar .minecraft\mods\25F2-RailwayNav0.7.2.jar
+    
+    goto fincheck
+
+) else (
+    color 4
+    echo 下载失败
+        
+    echo 请联系服务器运营者FRE_irc
+        
+    pause
+    exit
+)
+
+
+:fincheck
+timeout 2
+if exist .minecraft\mods\25F2-RailwayNav0.7.2.jar (
+    color 2
+    echo 您已更新
+    
+    timeout 1
+    
+    echo 进入游戏
+    
+    start HMCL.exe
+    
+    exit
+) else (
+    color 4
+    echo 您未更新
+    
+    echo 请联系服务器运营者FRE_irc
+    
+    pause
+    exit
+)
+start HMCL.exe
