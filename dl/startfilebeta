@@ -1,10 +1,6 @@
 @echo off
-::ver 0.1
+::ver 0.2
 chcp 65001
-
-echo 欢迎游玩
-
-echo 本次更新：铁路导航系统
 
 echo 正在检查本地状态：
 
